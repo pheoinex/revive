@@ -1,0 +1,13 @@
+Create Table: CREATE TABLE `goods` (
+  `goods_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_name` varchar(120) NOT NULL DEFAULT '',
+  `cat_id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `brand_id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `goods_sn` char(15) NOT NULL DEFAULT '',
+  `goods_number` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `shop_price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `market_price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `click_count` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`goods_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8
+
