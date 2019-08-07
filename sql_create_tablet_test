@@ -11,3 +11,7 @@ Create Table: CREATE TABLE `goods` (
   PRIMARY KEY (`goods_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8
 
+def LNode：
+  def __new__(self,x):
+    self.data = x
+    self.next =None
