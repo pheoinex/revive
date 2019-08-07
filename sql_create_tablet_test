@@ -11,7 +11,55 @@ Create Table: CREATE TABLE `goods` (
   PRIMARY KEY (`goods_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8
 
-def LNode：
-  def __new__(self,x):
-    self.data = x
-    self.next =None
+class LNode:
+    def __init__(self,x):
+        self.data = x 
+        self.next = None 
+def Reversed(head):
+    if head==None or head.next == None or head.next.next == None:
+        return 0
+    per = None 
+    cur = None 
+    next = None 
+    #把链表首结点变为尾结点
+    cur = head.next 
+    next = cur.next 
+    cur.next = None 
+    pre = cur 
+    cur = next 
+
+    while cur.next != None:
+        next = cur.next 
+        cur.next = pre 
+        pre = cur 
+        cur = next 
+    #链表最后一个结点指向倒数第二个节点
+    cur.next = pre 
+    head.next = cur 
+
+if __name__ == "__main__":
+    i = 1
+    head = LNode(0)
+    head.next = None 
+    tmp = None 
+    cur =head 
+    #构造单链表 顺序的
+    while i< 8:
+        tmp = LNode(i)
+        tmp.next = None 
+        cur.next = tmp 
+        cur = tmp
+        i +=1
+    print("逆序前")
+    cur = head.next
+    #cur = head 
+    while cur!=None:
+        print(cur.data)
+        cur = cur.next 
+    print("逆序后")
+    Reversed(head)
+    cur = head.next
+    #cur = head  
+    while cur != None :
+        print(cur.data)
+        cur = cur.next 
