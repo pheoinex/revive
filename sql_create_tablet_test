@@ -63,3 +63,7 @@ if __name__ == "__main__":
     while cur != None :
         print(cur.data)
         cur = cur.next 
+ python -m pip install --upgrade pip
+ pip install --upgrade jupyterthemes
+ 
+ jt -t solarizedl -altp -T -N
