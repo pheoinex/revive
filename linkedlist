@@ -1,1 +1,43 @@
+class LNode():
+    def __init__(self,x):
+        self.data = x
+        self.next = None
 
+#不带头结点的单链表进行逆序
+def RecursiveReverse(head):
+    #如果链表为空或者链表中只有一个元素
+    if head == None or head.next == None:
+        return head 
+    else:
+        #反转后面的结点
+        newhead = RecursiveReverse(head.next)
+        #把当前遍历的结点加到后面结点逆序后链表的尾部
+        head.next.next = head 
+        head.next = None 
+        return newhead 
+
+if __name__ == "__main__": 
+    # 创建一个无头结点的链表
+    i = 1 
+    tmp = None 
+    head = LNode(i)
+    head.next = None 
+    pre = head
+    i += 1 
+    while i < 8 :
+        tmp = LNode(i)
+        tmp.next = None 
+        pre.next = tmp 
+        pre = tmp
+        i += 1 
+    print("bofore sorting:")
+    cur = head 
+    while cur != None:
+        print(cur.data)
+        cur = cur.next
+    RecursiveReverse(head)
+    print("after sorting")
+    cur = head 
+    while cur != None:
+        print(cur.data)
+        cur = cur.next       
